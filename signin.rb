@@ -26,8 +26,7 @@ $authorization = Signet::OAuth2::Client.new(
     :client_secret => $credentials.client_secret,
     :redirect_uri => $credentials.redirect_uris.first,
     :scope => PLUS_LOGIN_SCOPE)
-$client = Google::APIClient.new({:application_name => "sinatra-ruby-gplus"}); #,:application_version => "1.0"})
-
+$client = Google::APIClient.new({:application_name => "sinatra-ruby-gplus"}); 
 
 ##
 # Connect the user with Google+ and store the credentials.

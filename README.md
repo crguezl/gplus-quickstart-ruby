@@ -1,7 +1,7 @@
 # Google+ Ruby Quickstart
 
 The instructions for getting started are available at:
-https://developers.google.com/+/quickstart/ruby
+[https://developers.google.com/+/quickstart/ruby](https://developers.google.com/+/quickstart/ruby)
 
 
 The Google+ Ruby Quickstart lets you get started with the Google+ platform
@@ -14,6 +14,10 @@ in a few minutes.
  * Making Google+ API requests with the access token, including getting a
    list of people that the user has circled.
  * Disconnecting the app from the user's Google account and revoking tokens.
+
+## Credentials
+
+[Credentials](https://console.developers.google.com/project/apps~sinatra-ruby-gplus/apiui/credential)
 
 ## Forked from: 
   Forked from class@google.com (Gus Class) by Casiano
