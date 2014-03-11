@@ -23,7 +23,7 @@ access to their private data using your client `ID`.
 Such screen will be shown for all of your applications registered
 in this project
 
-## LICENSE
+## License
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
