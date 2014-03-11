@@ -122,10 +122,16 @@ get '/' do
   end
   state = session[:state]
 
-  response = File.read('index.html').sub(/[{]{2}\s*STATE\s*[}]{2}/, state)
-  response = response.sub(/[{]{2}\s*CLIENT_ID\s*[}]{2}/, $credentials.client_id)
-  response = response.sub(/[{]{2}\s*APPLICATION_NAME\s*[}]{2}/,
-      APPLICATION_NAME)
+  #response = File.read('index.html').sub(/[{]{2}\s*STATE\s*[}]{2}/, state)
+  #response = response.sub(/[{]{2}\s*CLIENT_ID\s*[}]{2}/, $credentials.client_id)
+  #response = response.sub(/[{]{2}\s*APPLICATION_NAME\s*[}]{2}/,
+  #   APPLICATION_NAME)
+
+  erb :index, 
+      :locals  => { :state => state, 
+                    :client_id => $credentials.client_id,
+                    :application_name => APPLICATION_NAME
+                  }
 end
 
 
