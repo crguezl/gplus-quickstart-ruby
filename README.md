@@ -3,11 +3,6 @@
 The instructions for getting started are available at:
 https://developers.google.com/+/quickstart/ruby
 
-## Consent screen
-The consent screen will be shown to users whenever you request
-access to their private data using your client `ID`.
-Such screen will be shown for all of your applications registered
-in this project
 
 The Google+ Ruby Quickstart lets you get started with the Google+ platform
 in a few minutes.
@@ -20,11 +15,15 @@ in a few minutes.
    list of people that the user has circled.
  * Disconnecting the app from the user's Google account and revoking tokens.
 
-Author: class@google.com (Gus Class)
+Author: Casiano. Forked from class@google.com (Gus Class)
 
-# LICENSE
+## Consent screen
+The consent screen will be shown to users whenever you request
+access to their private data using your client `ID`.
+Such screen will be shown for all of your applications registered
+in this project
 
- Copyright 2013 Google Inc. All Rights Reserved.
+## LICENSE
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
