@@ -15,7 +15,8 @@ in a few minutes.
    list of people that the user has circled.
  * Disconnecting the app from the user's Google account and revoking tokens.
 
-Author: Casiano. Forked from class@google.com (Gus Class)
+## Forked from: 
+  Forked from class@google.com (Gus Class) by Casiano
 
 ## Consent screen
 The consent screen will be shown to users whenever you request
