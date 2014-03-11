@@ -26,8 +26,7 @@ $authorization = Signet::OAuth2::Client.new(
     :client_secret => $credentials.client_secret,
     :redirect_uri => $credentials.redirect_uris.first,
     :scope => PLUS_LOGIN_SCOPE)
-$client = Google::APIClient.new({:application_name => "sinatra-ruby-gplus"}); #,:application_version => "1.0"})
-
+$client = Google::APIClient.new({:application_name => "sinatra-ruby-gplus"}); 
 
 ##
 # Connect the user with Google+ and store the credentials.
@@ -123,10 +122,16 @@ get '/' do
   end
   state = session[:state]
 
-  response = File.read('index.html').sub(/[{]{2}\s*STATE\s*[}]{2}/, state)
-  response = response.sub(/[{]{2}\s*CLIENT_ID\s*[}]{2}/, $credentials.client_id)
-  response = response.sub(/[{]{2}\s*APPLICATION_NAME\s*[}]{2}/,
-      APPLICATION_NAME)
+  #response = File.read('index.html').sub(/[{]{2}\s*STATE\s*[}]{2}/, state)
+  #response = response.sub(/[{]{2}\s*CLIENT_ID\s*[}]{2}/, $credentials.client_id)
+  #response = response.sub(/[{]{2}\s*APPLICATION_NAME\s*[}]{2}/,
+  #   APPLICATION_NAME)
+
+  erb :index, 
+      :locals  => { :state => state, 
+                    :client_id => $credentials.client_id,
+                    :application_name => APPLICATION_NAME
+                  }
 end
 
 

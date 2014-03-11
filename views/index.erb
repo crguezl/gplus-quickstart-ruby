@@ -1,25 +1,8 @@
-<html>
-<head>
-  <title>{{ APPLICATION_NAME }}</title>
-  <script type="text/javascript">
-  (function() {
-    var po = document.createElement('script');
-    po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://plus.google.com/js/client:plusone.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(po, s);
-  })();
-  </script>
-  <!-- JavaScript specific to this application that is not related to API
-     calls -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" ></script>
-</head>
-<body>
   <div id="gConnect">
     <button class="g-signin"
         data-scope="https://www.googleapis.com/auth/plus.login"
         data-requestvisibleactions="http://schemas.google.com/AddActivity"
-        data-clientId="{{ CLIENT_ID }}"
+        data-clientId="<%= client_id %>"
         data-accesstype="offline"
         data-callback="onSignInCallback"
         data-theme="dark"
@@ -47,7 +30,6 @@
     <h2>Authentication Logs</h2>
     <pre id="authResult"></pre>
   </div>
-</body>
 <script type="text/javascript">
 var helper = (function() {
   var authResult = undefined;
@@ -138,7 +120,7 @@ var helper = (function() {
       console.log(this.authResult.code);
       $.ajax({
         type: 'POST',
-        url: window.location.href + '/connect?state={{ STATE }}',
+        url: window.location.href + '/connect?state=<%= state %>',
         contentType: 'application/octet-stream; charset=utf-8',
         success: function(result) {
           console.log(result);
@@ -186,11 +168,11 @@ var helper = (function() {
  */
 $(document).ready(function() {
   $('#disconnect').click(helper.disconnectServer);
-  if ($('[data-clientid="YOUR_CLIENT_ID"]').length > 0) {
+  if ($('[data-clientid="YOUR_client_id"]').length > 0) {
     alert('This sample requires your OAuth credentials (client ID) ' +
         'from the Google APIs console:\n' +
         '    https://code.google.com/apis/console/#:access\n\n' +
-        'Find and replace YOUR_CLIENT_ID with your client ID and ' +
+        'Find and replace YOUR_client_id with your client ID and ' +
         'YOUR_CLIENT_SECRET with your client secret in the project sources.'
     );
   }
@@ -206,4 +188,3 @@ function onSignInCallback(authResult) {
   helper.onSignInCallback(authResult);
 }
 </script>
-</html>
